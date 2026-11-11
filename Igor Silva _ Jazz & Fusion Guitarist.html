@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Igor Silva | Jazz &amp; Fusion Guitarist</title>
+<meta name="description" content="Igor Silva, professional guitarist for 20 years. Jazz and fusion at heart, every style on stage. Cruise ships, weddings, nightclubs and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:dark;
+  --black:#050505;
+  --coal:#121212;
+  --graphite:#1c1c1e;
+  --line:#2a2a2d;
+  --bone:#f1efea;
+  --steel:#9a9ea5;
+  --gold:#c9a45c;
+  --red:#e4002b;
+  --font:'Archivo','Helvetica Neue',Arial,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:72px;height:100%}
+body{margin:0;min-height:100%;background:var(--black);color:var(--bone);font-family:var(--font);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+
+/* nav */
+header{position:fixed;top:0;left:0;right:0;z-index:20;padding-top:env(safe-area-inset-top,0px);background:rgba(5,5,5,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-stretch:125%;font-weight:800;font-size:17px;letter-spacing:.02em;text-decoration:none}
+.logo b{color:var(--gold);font-weight:800}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:15px;font-weight:500}
+nav ul a{text-decoration:none;color:var(--steel);transition:color .2s}
+nav ul a:hover{color:var(--bone)}
+.btn{display:inline-block;background:var(--red);color:#fff;font-weight:700;font-size:16px;padding:14px 26px;text-decoration:none;border-radius:2px;transition:background .2s}
+.btn:hover{background:#ff1f48}
+.btn.ghost{background:transparent;border:1px solid var(--steel);color:var(--bone)}
+.btn.ghost:hover{border-color:var(--gold);color:var(--gold);background:transparent}
+
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px 0 0;position:relative;overflow:hidden;
+  background:radial-gradient(ellipse 70% 55% at 75% 30%,#2b2112 0%,transparent 70%),var(--black)}
+.hero h1{margin:0;font-stretch:125%;font-weight:900;line-height:.86;letter-spacing:-.03em;font-size:clamp(64px,15.5vw,210px);text-transform:none}
+.hero h1 span{display:block;color:transparent;-webkit-text-stroke:2px var(--bone)}
+.hero .sub{display:flex;flex-wrap:wrap;gap:24px 56px;align-items:end;justify-content:space-between;margin:40px 0 48px}
+.hero .sub p{margin:0;max-width:34ch;color:var(--steel);font-size:20px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+
+/* fretboard */
+.board{position:relative;height:230px;background:linear-gradient(#231a10,#150f09);border-top:3px solid #6b5a3a;border-bottom:3px solid #6b5a3a;
+  background-image:
+    repeating-linear-gradient(90deg,transparent 0 calc(11.11% - 3px),#8d8f94 calc(11.11% - 3px) 11.11%),
+    linear-gradient(#231a10,#150f09)}
+.inlay{position:absolute;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:#e8e1cf;opacity:.85}
+.strings{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-around;padding:12px 0}
+.string{all:unset;box-sizing:border-box;display:block;width:100%;height:34px;cursor:pointer;position:relative}
+.string::after{content:"";position:absolute;left:0;right:0;top:50%;height:var(--t);margin-top:calc(var(--t) / -2);background:linear-gradient(#f4e3b5,var(--gold) 60%,#7a6232);box-shadow:0 2px 3px rgba(0,0,0,.6)}
+.string.plucked::after{animation:wob .9s ease-out}
+.string:focus-visible{outline:2px solid var(--bone);outline-offset:-2px}
+@keyframes wob{0%{transform:scaleY(5)}15%{transform:scaleY(-4)}30%{transform:scaleY(3)}45%{transform:scaleY(-2)}60%{transform:scaleY(1.4)}80%{transform:scaleY(-.6)}100%{transform:scaleY(1)}}
+.hint{position:absolute;right:20px;bottom:-34px;font-size:13px;color:var(--steel)}
+.hero-end{height:44px}
+
+/* sections */
+section{padding:120px 0}
+h2{margin:0 0 28px;font-stretch:112%;font-weight:800;font-size:clamp(36px,5.5vw,68px);line-height:1;letter-spacing:-.02em}
+.about{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:start}
+.about p{margin:0 0 20px;color:#cfccc5;max-width:60ch}
+.years{font-stretch:125%;font-weight:900;font-size:clamp(120px,22vw,300px);line-height:.8;color:var(--gold);letter-spacing:-.05em}
+.years small{display:block;font-stretch:100%;font-weight:600;font-size:20px;letter-spacing:0;color:var(--steel);margin-top:20px}
+
+.styles{background:var(--coal);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:0;overflow:hidden}
+.marquee{display:flex;gap:56px;white-space:nowrap;padding:34px 0;width:max-content;animation:slide 38s linear infinite;font-stretch:125%;font-weight:800;font-size:34px}
+.marquee span:nth-child(3n+1){color:var(--gold)}
+.marquee span:nth-child(3n+2){color:var(--bone)}
+.marquee span:nth-child(3n){color:var(--steel)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+.gigs{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
+.gig{padding:36px 28px 40px 0;border-right:1px solid var(--line);padding-left:28px}
+.gig:first-child{padding-left:0}
+.gig:last-child{border-right:0}
+.gig h3{margin:0 0 12px;font-stretch:110%;font-weight:800;font-size:24px;line-height:1.15}
+.gig p{margin:0;color:var(--steel);font-size:16px}
+.gig.hot h3{color:var(--red)}
+
+.contact{background:var(--graphite);text-align:left}
+.contact .grid{display:grid;grid-template-columns:7fr 5fr;gap:64px;align-items:end}
+.contact h2{font-size:clamp(44px,8vw,112px)}
+.links{display:grid;gap:12px}
+.links a{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;border:1px solid var(--line);background:var(--black);text-decoration:none;font-weight:600;transition:border-color .2s,transform .2s}
+.links a:hover{border-color:var(--gold);transform:translateX(4px)}
+.links span{color:var(--steel);font-weight:400;font-size:15px}
+footer{padding:36px 0;border-top:1px solid var(--line);color:var(--steel);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+@media (max-width:860px){
+  nav ul{display:none}
+  .about,.contact .grid{grid-template-columns:1fr;gap:40px}
+  .gigs{grid-template-columns:1fr 1fr}
+  .gig{border-right:0;border-bottom:1px solid var(--line);padding-left:0}
+  .board{height:200px}
+  section{padding:84px 0}
+}
+@media (max-width:520px){.gigs{grid-template-columns:1fr}.hero .sub p{font-size:18px}}
+@media (prefers-reduced-motion:reduce){.marquee{animation:none}.string.plucked::after{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="logo" href="#top">IGOR <b>SILVA</b></a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="btn" href="#contact">Book a show</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <h1>Igor<span>Silva</span></h1>
+      <div class="sub">
+        <p>Guitarist for 20 years. Jazz and fusion at heart, ready for any room and any repertoire.</p>
+        <div class="cta">
+          <a class="btn" href="#contact">Book a show</a>
+          <a class="btn ghost" href="#experience">See where I’ve played</a>
+        </div>
+      </div>
+    </div>
+    <div class="board" aria-label="Interactive guitar fretboard. Press a string to play it.">
+      <i class="inlay" style="left:27.7%"></i><i class="inlay" style="left:50%"></i><i class="inlay" style="left:72.2%"></i>
+      <div class="strings" id="strings"></div>
+      <span class="hint">Pluck a string</span>
+    </div>
+    <div class="hero-end"></div>
+  </div>
+
+  <section id="about">
+    <div class="wrap about">
+      <div class="years">20<small>years on guitar</small></div>
+      <div>
+        <h2>Jazz harmony. Fusion fire. Every style.</h2>
+        <p>I’m Igor Silva, a professional guitarist with two decades on stage. My focus is jazz and fusion: rich harmony, improvisation and tone that moves a room.</p>
+        <p>I also play every kind of music, so the set always fits the event, from an elegant dinner to a packed dance floor.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="styles" aria-hidden="true">
+    <div class="marquee">
+      <span>Jazz</span><span>Fusion</span><span>Pop</span><span>Rock</span><span>Blues</span><span>Funk</span><span>MPB</span><span>Soul</span><span>Latin</span><span>Dance</span>
+      <span>Jazz</span><span>Fusion</span><span>Pop</span><span>Rock</span><span>Blues</span><span>Funk</span><span>MPB</span><span>Soul</span><span>Latin</span><span>Dance</span>
+    </div>
+  </div>
+
+  <section id="experience">
+    <div class="wrap">
+      <h2>Where I’ve played</h2>
+      <div class="gigs">
+        <div class="gig hot">
+          <h3>Onboard guitarist, MSC Cruises</h3>
+          <p>Live music at sea for guests from around the world.</p>
+        </div>
+        <div class="gig">
+          <h3>Weddings</h3>
+          <p>Ceremony, cocktail hour and party, tuned to your story.</p>
+        </div>
+        <div class="gig">
+          <h3>Nightclubs</h3>
+          <p>High-energy sets that keep the floor full.</p>
+        </div>
+        <div class="gig">
+          <h3>And more</h3>
+          <p>Private events, restaurants and any stage that needs a guitar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap grid">
+      <h2>Let’s make your event sound great.</h2>
+      <div class="links">
+        <a href="https://wa.me/5524998622541" target="_blank" rel="noopener">+55 24 99862-2541 <span>Call or WhatsApp</span></a>
+        <a href="https://instagram.com/eu_igorsilva_" target="_blank" rel="noopener">@eu_igorsilva_ <span>Instagram</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Igor Silva</span><span>Jazz &amp; fusion guitarist</span></div>
+</footer>
+
+<script>
+(function(){
+  var notes=[329.63,246.94,196.00,146.83,110.00,82.41]; // E B G D A E (thin to thick)
+  var thick=[1.5,2,2.8,3.6,4.6,5.8];
+  var box=document.getElementById('strings');
+  var ctx=null;
+  function play(f){
+    try{
+      ctx=ctx||new (window.AudioContext||window.webkitAudioContext)();
+      if(ctx.state==='suspended')ctx.resume();
+      var t=ctx.currentTime,g=ctx.createGain(),lp=ctx.createBiquadFilter();
+      lp.type='lowpass';lp.frequency.setValueAtTime(3200,t);lp.frequency.exponentialRampToValueAtTime(500,t+1.4);
+      g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.35,t+.005);g.gain.exponentialRampToValueAtTime(.001,t+1.8);
+      [1,2,3].forEach(function(m,i){
+        var o=ctx.createOscillator();o.type=i?'sine':'sawtooth';o.frequency.value=f*m;
+        var og=ctx.createGain();og.gain.value=i?0.25/m:0.5;o.connect(og);og.connect(lp);o.start(t);o.stop(t+1.9);
+      });
+      lp.connect(g);g.connect(ctx.destination);
+    }catch(e){}
+  }
+  function pluck(el,f){
+    el.classList.remove('plucked');void el.offsetWidth;el.classList.add('plucked');play(f);
+  }
+  notes.forEach(function(f,i){
+    var b=document.createElement('button');
+    b.className='string';b.type='button';b.style.setProperty('--t',thick[i]+'px');
+    b.setAttribute('aria-label','Play string '+(i+1));
+    b.addEventListener('click',function(){pluck(b,f)});
+    box.appendChild(b);
+  });
+})();
+</script>
+</body>
+</html>
